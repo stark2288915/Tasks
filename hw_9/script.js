@@ -278,33 +278,32 @@ document.body.appendChild(generalDiv);
 
 for (const courseElement of coursesArray) {
 
-    if(Array.isArray(courseElement)){
-        const coursesDiv = document.createElement('div');
-        generalDiv.append(coursesDiv);
-        const h3 = document.createElement('h3');
-        coursesDiv.append(h3);
-        h3.innerText = 'До курсу входить:'
-        const ul = document.createElement('ul');
-        coursesDiv.append(ul);
-        for (const el of courseElement) {
-            const li = document.createElement('li');
-            ul.append(li);
-            li.innerText = el;
-        }
 
-    }else{
-        const title = document.createElement('h3');
-        const monthDuration = document.createElement('p');
-        const hourDuration = document.createElement('p');
+    const title = document.createElement('h3');
+    const monthDuration = document.createElement('p');
+    const hourDuration = document.createElement('p');
 
-        generalDiv.append(title);
-        generalDiv.append(monthDuration);
-        generalDiv.append(hourDuration);
+    generalDiv.append(title);
+    generalDiv.append(monthDuration);
+    generalDiv.append(hourDuration);
 
-        title.innerText = courseElement.title;
-        monthDuration.innerText = `На курс виділено ${courseElement.monthDuration} місяців, `;
-        hourDuration.innerText = `або ${courseElement.hourDuration} годин.`;
+    title.innerText = courseElement.title;
+    monthDuration.innerText = `На курс виділено ${courseElement.monthDuration} місяців, `;
+    hourDuration.innerText = `або ${courseElement.hourDuration} годин.`;
+
+
+    const coursesDiv = document.createElement('div');
+    generalDiv.append(coursesDiv);
+    const h3 = document.createElement('h3');
+    coursesDiv.append(h3);
+    h3.innerText = 'До курсу входить:'
+    const ul = document.createElement('ul');
+    coursesDiv.append(ul);
+
+    for (const el of courseElement.modules) {
+        const li = document.createElement('li');
+        ul.append(li);
+        li.innerText = el;
 
     }
-
 }
