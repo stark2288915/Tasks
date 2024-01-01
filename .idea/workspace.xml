@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9d8c97-1072-492b-b0fd-a231b19267cb" name="Changes" comment="7щ768щ">
-      <change beforePath="$PROJECT_DIR$/hw_9/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/hw_9/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fannyKode/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fannyKode/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_10/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_10/script2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,9 @@
       <workItem from="1703701087309" duration="7933000" />
       <workItem from="1703751379511" duration="5311000" />
       <workItem from="1703773304436" duration="3682000" />
+      <workItem from="1703791723724" duration="1617000" />
+      <workItem from="1704016312557" duration="4768000" />
+      <workItem from="1704107138409" duration="8473000" />
     </task>
     <task id="LOCAL-00001" summary="7щ768щ">
       <created>1703536625469</created>
@@ -98,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703757694045</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="7щ768щ">
+      <created>1703792053226</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703792053226</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
