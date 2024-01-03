@@ -17,14 +17,19 @@
     function showInfo (user){
 
         for (const key in user) {
-            //console.log(user[key]);
             if(typeof user[key] === 'object'){
-               // console.log(key);
+                const title = document.createElement('h3');
+                ulInfo.appendChild(title);
+                title.innerText = `${key}:`;
+               console.log(`${user[key]} obj`);
+
                 showInfo(user[key]);
+            }else {
+                const liInfo = document.createElement('li');
+                ulInfo.appendChild(liInfo);
+                liInfo.innerText = `${key}: ${user[key]}`
             }
-            const liInfo = document.createElement('li');
-            ulInfo.appendChild(liInfo);
-            liInfo.innerText = `${key}: ${user[key]}`
+
         }
     }
 
