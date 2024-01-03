@@ -12,7 +12,7 @@
 
     const localUrl = new URL(location.href);
     const user = JSON.parse(localUrl.searchParams.get('user'));
-    console.log(user);
+
 
     function showInfo (user){
 
@@ -21,7 +21,6 @@
                 const title = document.createElement('h3');
                 ulInfo.appendChild(title);
                 title.innerText = `${key}:`;
-               console.log(`${user[key]} obj`);
 
                 showInfo(user[key]);
             }else {
