@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9d8c97-1072-492b-b0fd-a231b19267cb" name="Changes" comment="7щ768щ">
-      <change afterPath="$PROJECT_DIR$/fannyKode/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fannyKode/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_10/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hw_10/script2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_11/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_11/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_12/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_12/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw_12/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_10/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw_10/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_10/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/hw_10/script2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -37,21 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\itellijProjects\\Tasks\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "copyright",
+    "ts.external.directory.path": "E:\\itellijProjects\\Tasks\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\itellijProjects\Tasks\hw_1" />
@@ -75,7 +79,10 @@
       <workItem from="1703773304436" duration="3682000" />
       <workItem from="1703791723724" duration="1617000" />
       <workItem from="1704016312557" duration="4768000" />
-      <workItem from="1704107138409" duration="8473000" />
+      <workItem from="1704107138409" duration="13483000" />
+      <workItem from="1704133017359" duration="3251000" />
+      <workItem from="1704221145505" duration="3031000" />
+      <workItem from="1704312050458" duration="6040000" />
     </task>
     <task id="LOCAL-00001" summary="7щ768щ">
       <created>1703536625469</created>
@@ -112,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703792053226</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="7щ768щ">
+      <created>1704119628453</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704119628453</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

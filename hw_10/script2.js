@@ -758,31 +758,89 @@ let locations = [
     }
 ];
 
-const page = document.createElement('div');
-document.body.appendChild(page);
+/*const pageDiv = document.createElement('div');
+document.body.appendChild(page);*/
 
-const prev = document.createElement('button');
-const next = document.createElement('button');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
 
-next.innerText = 'next';
-prev.innerText = 'prev';
+let page = 1;
+let limit = 10;
+const tenLocations = (page, limit) => {
+    const wrapper = document.getElementById('wrapper');
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
 
-page.append(prev);
-page.append(next);
+    const state = [];
 
-next.addEventListener('click', ev => {
-    ev.preventDefault();
-    for (let i = 0; i < 11; i++ ) {
-        const block = document.createElement('div');
-        const title = document.createElement('h4');
-        const type = document.createElement('p');
+    for (let i = startIndex; i < endIndex; i++){
+       const item =  document.createElement('div');
+       const title = document.createElement('div');
+       const type = document.createElement('div');
 
-        page.append(block);
-        block.append(title);
-        block.append(type);
+       item.append(title, type);
+       wrapper.appendChild(item);
 
-        title.innerText = locations[i].title;
-        type.innerText = locations[i].type;
+       title.innerText = `title ${locations[i].title}`;
+       type.innerText = `type ${locations[i].type}`;
+       state.push(item);
     }
-})
+    wrapper.replaceChildren(...state);
+}
+
+tenLocations(page, limit);
+prev.addEventListener('click', () => tenLocations(page -= 1, limit));
+next.addEventListener('click', () => tenLocations(page += 1, limit));
+
+
+
+
+
+
+
+// Масив з об'єктами (приклад)
+/*const objectsArray = [
+    { id: 1, name: 'Object 1' },
+    { id: 2, name: 'Object 2' },
+    // Додайте інші об'єкти тут
+    { id: 30, name: 'Object 30' }
+];
+
+// Кількість об'єктів, які показуються одночасно
+const itemsPerPage = 5;
+
+// Початковий індекс для відображення об'єктів
+let currentIndex = 0;
+
+// Функція для відображення об'єктів
+function displayObjects(startIndex) {
+    const endIndex = startIndex + itemsPerPage;
+    const displayedObjects = locations.slice(startIndex, endIndex);
+
+    // Вивід об'єктів (можна використовувати власний код для відображення)
+    console.log(displayedObjects);
+}
+
+// Обробник натискання кнопки "Next"
+function onNextClick() {
+    if (currentIndex + itemsPerPage < locations.length) {
+        currentIndex += itemsPerPage;
+        displayObjects(currentIndex);
+    }
+}
+
+// Обробник натискання кнопки "Prev"
+function onPrevClick() {
+    if (currentIndex - itemsPerPage >= 0) {
+        currentIndex -= itemsPerPage;
+        displayObjects(currentIndex);
+    }
+}
+
+// Виведення перших 5 об'єктів при завантаженні сторінки
+displayObjects(currentIndex);
+
+// Підключення обробників для кнопок
+document.getElementById('nextButton').addEventListener('click', onNextClick);
+document.getElementById('prevButton').addEventListener('click', onPrevClick);*/
 

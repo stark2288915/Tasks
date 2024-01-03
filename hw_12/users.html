@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ulnfo"></ul>
+
+<script>
+    const ulInfo = document.getElementById('ulnfo');
+
+    const localUrl = new URL(location.href);
+    const user = JSON.parse(localUrl.searchParams.get('user'));
+    console.log(user);
+
+    function showInfo (user){
+
+        for (const key in user) {
+            //console.log(user[key]);
+            if(typeof user[key] === 'object'){
+               // console.log(key);
+                showInfo(user[key]);
+            }
+            const liInfo = document.createElement('li');
+            ulInfo.appendChild(liInfo);
+            liInfo.innerText = `${key}: ${user[key]}`
+        }
+    }
+
+    showInfo(user);
+
+</script>
+</body>
+</html>
