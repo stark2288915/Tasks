@@ -1,92 +1,87 @@
-function createWordFrequencyRanking(text) {
-    // Преобразование текста в нижний регистр и удаление знаков препинания
-    const cleanedText = text.toLowerCase().replace(/[^\w\s]/g, '');
+// Массив объектов с вопросами и ответами
+const questions = [
+    {
+        question: "Вопрос 1",
+        answers: ["Ответ 1", "Ответ 2", "Ответ 3", "Ответ 4", "Ответ 5"],
+        correct: 0 // Индекс правильного ответа
+    },
+    // ... Добавьте остальные вопросы аналогично
+];
 
-    // Разделение текста на слова
-    const words = cleanedText.split(/\s+/);
+// Функция для создания теста
+function createTest() {
+    const testContainer = document.getElementById('test-container');
 
-    // Создание объекта для хранения частоты встречаемости слов
-    const wordFrequency = {};
+    questions.forEach((item, questionIndex) => {
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question');
 
-    // Подсчет частоты встречаемости слов
-    words.forEach(word => {
-        wordFrequency[word] = (wordFrequency[word] || 0) + 1;
+        const questionTitle = document.createElement('h3');
+        questionTitle.innerText = item.question;
+        questionElement.appendChild(questionTitle);
+
+        const answersList = document.createElement('ul');
+
+        item.answers.forEach((answer, answerIndex) => {
+            const answerItem = document.createElement('li');
+
+            const answerInput = document.createElement('input');
+            answerInput.setAttribute('type', 'radio');
+            answerInput.setAttribute('name', `question${questionIndex}`);
+            answerInput.setAttribute('id', `question${questionIndex}_answer${answerIndex}`);
+            answerInput.dataset.correct = answerIndex === item.correct;
+            answerInput.onclick = handleAnswerClick;
+
+            const answerLabel = document.createElement('label');
+            answerLabel.setAttribute('for', `question${questionIndex}_answer${answerIndex}`);
+            answerLabel.innerText = answer;
+
+            answerItem.appendChild(answerInput);
+            answerItem.appendChild(answerLabel);
+
+            answersList.appendChild(answerItem);
+        });
+
+        questionElement.appendChild(answersList);
+        testContainer.appendChild(questionElement);
     });
 
-    // Преобразование объекта в массив для сортировки
-    const ranking = Object.entries(wordFrequency);
+    const resultButton = document.createElement('button');
+    resultButton.innerText = 'Получить результат';
+    resultButton.onclick = showResults;
 
-    // Сортировка массива по частоте встречаемости
-    ranking.sort((a, b) => b[1] - a[1]);
+    testContainer.appendChild(resultButton);
 
-    return ranking;
+    const resultDisplay = document.createElement('div');
+    resultDisplay.id = 'result';
+    testContainer.appendChild(resultDisplay);
 }
 
-// Пример использования
-const text = "The chase is better than the catch\n" +
-    "Transforming the tunes\n" +
-    "We need your support\n" +
-    "If you got the breath back\n" +
-    "It's the first page of the second chapter\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Coming down on the floor like a maniac\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Get down in full effect\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Coming down on the floor like a maniac\n" +
-    "Hold your track so clean up the dish\n" +
-    "By the way\n" +
-    "How much is the fish?\n" +
-    "How much is the fish?\n" +
-    "Here we go\n" +
-    "Here we go\n" +
-    "Here we go again\n" +
-    "Yeah!\n" +
-    "Sunshine in the air\n" +
-    "We're breaking the rules\n" +
-    "Ignore the machine\n" +
-    "You won't ever stop this\n" +
-    "The chase is better than the catch\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Coming down on the floor like a maniac\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Get down in full effect\n" +
-    "Hold your back for the rhythym attack\n" +
-    "Coming down on the floor like a maniac\n" +
-    "Hold your track so clean up the dish\n" +
-    "By the way\n" +
-    "How much is the fish?\n" +
-    "How much is the fish?\n" +
-    "Yee-hah!\n" +
-    "Sunshine in the air\n" +
-    "Come on!\n" +
-    "Na-na na na na\n" +
-    "Everybody\n" +
-    "Na na na na na\n" +
-    "Come on\n" +
-    "Na na na na na\n" +
-    "Together\n" +
-    "Na na na na na\n" +
-    "Yeah\n" +
-    "Na na na na na\n" +
-    "Yeah!\n" +
-    "Na na na na na\n" +
-    "How much is the fish?\n" +
-    "Na na na na na\n" +
-    "Na na na na na\n" +
-    "How much is the fish\n" +
-    "Na na na na na\n" +
-    "Yeah\n" +
-    "Na na na na na\n" +
-    "Na na na na na\n" +
-    "Come on come on\n" +
-    "Aah!\n" +
-    "Resurrection";
+// Обработчик клика по ответу
+function handleAnswerClick(event) {
+    const selectedAnswer = event.target;
+    const isCorrect = selectedAnswer.dataset.correct === 'true';
 
+    selectedAnswer.parentElement.style.backgroundColor = isCorrect ? 'lightgreen' : 'red';
+}
 
+// Функция для отображения результатов
+function showResults() {
+    let correctAnswers = 0;
+    let totalQuestions = questions.length;
 
+    questions.forEach((item, questionIndex) => {
+        const answers = document.getElementsByName(`question${questionIndex}`);
+        answers.forEach(answer => {
+            if (answer.checked && answer.dataset.correct === 'true') {
+                correctAnswers++;
+            }
+        });
+    });
 
+    const resultDisplay = document.getElementById('result');
+    resultDisplay.innerText = `Правильных ответов: ${correctAnswers} из ${totalQuestions}`;
+}
 
-
-const wordRanking = createWordFrequencyRanking(text);
-console.log(wordRanking);
+// Вызываем функцию при загрузке страницы
+window.onload = createTest;
