@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9d8c97-1072-492b-b0fd-a231b19267cb" name="Changes" comment="7щ768щ">
-      <change afterPath="$PROJECT_DIR$/sqlDB/lesson_1.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sqlDB/lesson_2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fannyKode/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/fannyKode/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,7 @@
       <workItem from="1704644627474" duration="1667000" />
       <workItem from="1704656587533" duration="146000" />
       <workItem from="1705584411134" duration="633000" />
-      <workItem from="1705660779145" duration="7718000" />
+      <workItem from="1705660779145" duration="13076000" />
     </task>
     <task id="LOCAL-00001" summary="7щ768щ">
       <created>1703536625469</created>
@@ -167,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704642743571</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="7щ768щ">
+      <created>1705673328331</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705673328331</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
