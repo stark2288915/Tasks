@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9d8c97-1072-492b-b0fd-a231b19267cb" name="Changes" comment="7щ768щ">
-      <change afterPath="$PROJECT_DIR$/mongoDB/lesson_1.mongodb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typeScript/index_2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typeScript/index_2.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongoDB/lesson_1.mongodb" beforeDir="false" afterPath="$PROJECT_DIR$/mongoDB/lesson_1.mongodb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <workItem from="1705660779145" duration="29878000" />
       <workItem from="1705843835848" duration="7640000" />
       <workItem from="1705953432308" duration="3340000" />
-      <workItem from="1706029390327" duration="6977000" />
+      <workItem from="1706029390327" duration="12204000" />
     </task>
     <task id="LOCAL-00001" summary="7щ768щ">
       <created>1703536625469</created>
@@ -222,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705955612581</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="7щ768щ">
+      <created>1706040042793</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1706040042793</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
