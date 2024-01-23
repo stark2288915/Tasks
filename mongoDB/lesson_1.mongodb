@@ -1,0 +1,150 @@
+//знайти все
+db.users.find();
+
+//створити об'єкт
+db.users.insertOne({car:'BMW', model:'s3', year:2020})
+
+//шукати по ід
+db.users.find({_id:ObjectId('65aff5fac47c0c52c5080949')});
+
+//шукати по декількох параметрів
+db.users.find({gender:'female', rating: 2});
+
+
+//шукаю по параметрах і в другому аргументі вказую що мені не треба показувати
+db.users.find(
+    {gender:'female', rating: 2},
+    {_id:0, name:false, rating:0}
+    );
+
+db.users.find(
+    {gender:'female', rating: 2},
+    {_id:0, age: true}
+    );
+
+
+//шукати через або
+db.users.find({
+    $or:[
+        {rating:2},
+        {rating:5},
+        {age:12}
+    ]
+})
+
+
+//шукати через і
+db.users.find({
+    $and:[
+        {gender:'female'},
+        {rating:2}
+    ]
+})
+
+//і з обо
+db.users.find({
+    $and: [
+        {$or:[{age:12}, {gender:'male'}]},
+        {rating:2}
+    ]
+})
+
+//шукає чи щось перелічене підходить
+db.users.find({age:{$in:[25,36,20,45]}});
+
+//шукає чи щось перелічене не підходить
+db.users.find({age:{$nin:[25,36,20,45]}});
+
+db.users.find({
+    age:{
+        $not:{
+            $in:[[25,36,20,45]]
+        }
+    }
+});
+
+
+
+db.users.find({rating:{$gt:2}}); //>
+
+db.users.find({rating:{$lt:3}}); //<
+
+db.users.find({rating:{$gte:2}}); //>=
+
+db.users.find({rating:{$lte:2}}); // <=
+
+db.users.find({rating:{$ne:3}}); //!=
+
+db.users.find({rating:{$eq:2}}); //=
+db.users.find({rating:2}); //=
+
+db.users.find({name: 'Kira'});
+db.users.find({name:/^a/i}); //стр почин. на "а" і без регістру
+db.users.find({name:/a$/i}); //закінчується на 'a'
+db.users.find({name:/.{2}t/i}); //знайшов де третя буква 'т'
+db.users.find({name:/^k.*a$/i}); //починається на к та закінч. на 'а'
+db.users.find({name:/.*k.*/i}); //все рівно що до і після 'k'
+
+db.users.find().sort({rating:1}); //сортує по рейтингу від менш до більш
+db.users.find().sort({rating:-1});
+
+db.users.find().sort({rating:1, name:-1}); //сортує по рейтингу а потім по нейму, якщо рейтинги одинакові
+db.users.find().sort({rating:1}).limit(2).skip(2);
+
+
+//шукає обєкт по ід і міняє в ньому конкретне поле
+db.users.updateOne(
+    {_id:ObjectId('65aff5fac47c0c52c508094e')},
+    {$set:{gender:'animal'}}
+    )
+
+//шукає обєкт по ід і перезаписує обєкт повністю
+db.users.updateOne(
+    {_id:ObjectId('65aff5fac47c0c52c508094e')},
+    {gender:'animal'}
+    )
+
+//міняємо поле у багатьох
+db.users.updateMany(
+    {gender:'male'},
+    {$set:{gender:'animal'}}
+    );
+
+
+//якщо теба доступитися через ключі обєкти в обєктах
+db.users.find({"address.city":'Lviv'});
+
+//шукає по масиву, звичайний пошук
+db.users.find({studying:'js'});
+
+//шукає обєкти по присутності поле батьки
+db.users.find({parents:{$exists:0}});
+db.users.find({parents:null});
+
+//знайшов де другий елемент джава
+db.users.find({'studying.1':'java'});
+
+
+//знаходить обєкти де є ,батьки та кожен елемент замінює на null
+db.users.updateMany(
+    {parents:{$exists:1}},
+    {$set:{'parents.$[]':null}}
+    )
+//додаємо в кінець масиву
+db.users.updateOne(
+    {_id:ObjectId('65aff5fac47c0c52c508094a')},
+    {$push:{studying:'python'}}
+    )
+
+//видаляємо елемент з масиву який вказали
+db.users.updateOne(
+    {_id:ObjectId('65aff5fac47c0c52c508094a')},
+    {$pull:{studying:'python'}}
+    )
+
+
+db.users.find({_id:ObjectId('65b00799c47c0c52c5080954')});
+
+//видалити по чомусь
+db.users.deleteOne({_id:ObjectId('65b00799c47c0c52c5080954')})
+
